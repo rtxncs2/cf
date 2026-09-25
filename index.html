@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SleepWell — Peaceful Sleep & Focus</title>
+
+<meta name="description"
+content="SleepWell helps you relax, focus and sleep peacefully with soothing green noise.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(63, 180, 105, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(35, 120, 75, 0.15),
+            transparent 35%
+        ),
+        #07110d;
+
+    color: #f1f7f3;
+
+    overflow-x: hidden;
+}
+
+
+/* Background dots */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Main */
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: min(700px, calc(100% - 40px));
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    margin-bottom: 35px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #63d48c,
+            #1c8d50
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(70, 210, 120, 0.2);
+}
+
+.logo-icon svg {
+    width: 24px;
+    height: 24px;
+
+    fill: white;
+}
+
+
+/* Badge */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    margin-bottom: 25px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(75, 190, 112, 0.08);
+
+    border:
+        1px solid
+        rgba(100, 220, 140, 0.14);
+
+    color: #83dba2;
+
+    font-size: 13px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #6ddd91;
+
+    box-shadow:
+        0 0 12px #6ddd91;
+}
+
+
+/* Heading */
+
+h1 {
+    font-size:
+        clamp(48px, 9vw, 82px);
+
+    line-height: 1;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 20%,
+            #bdeecb 55%,
+            #6bd88e
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* Description */
+
+.description {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    color: #9caea4;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* Download button */
+
+.download {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 54px;
+
+    padding: 0 25px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: #07110d;
+
+    background: #7de39d;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 40px
+        rgba(92, 214, 130, 0.18);
+
+    transition:
+        transform .25s,
+        background .25s,
+        box-shadow .25s;
+}
+
+.download:hover {
+    transform: translateY(-3px);
+
+    background: #91eaae;
+
+    box-shadow:
+        0 17px 45px
+        rgba(92, 214, 130, 0.27);
+}
+
+.download svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* Small text */
+
+.small {
+    margin-top: 18px;
+
+    color: #62736a;
+
+    font-size: 12px;
+}
+
+
+/* Footer */
+
+footer {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 22px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(255,255,255,0.06);
+
+    color: #4f6258;
+
+    font-size: 12px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 30px, 700px);
+
+        padding: 45px 10px;
+    }
+
+    .logo {
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .download {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<main class="container">
+
+
+    <!-- Logo -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path d="
+                    M20.5 15.5
+                    A8.5 8.5 0 0 1 8.5 3.5
+                    A8.5 8.5 0 1 0 20.5 15.5Z
+                "/>
+
+            </svg>
+
+        </div>
+
+        SleepWell
+
+    </div>
+
+
+    <!-- Badge -->
+
+    <div class="badge">
+
+        <span class="badge-dot"></span>
+
+        Calm sound. Better moments.
+
+    </div>
+
+
+    <!-- App info -->
+
+    <h1>
+        Sleep better.<br>
+        Focus better.
+    </h1>
+
+
+    <p class="description">
+
+        SleepWell uses soothing green noise
+        to create a peaceful sound environment
+        for better sleep, relaxation and focus.
+
+    </p>
+
+
+    <!-- Download -->
+
+    <a
+        class="download"
+        href="https://www.dropbox.com/scl/fi/d0ppg7eokdf5tv2svgu6i/sleepwell.apk?rlkey=yr8u1wsaxvic96ivwbcgadvdl&st=5g5c35hw&dl=1"
+    >
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+        >
+
+            <path d="M12 3v12"/>
+
+            <path d="m7 10 5 5 5-5"/>
+
+            <path d="M5 21h14"/>
+
+        </svg>
+
+        Download SleepWell APK
+
+    </a>
+
+
+    <div class="small">
+        
+    </div>
+
+
+</main>
+
+
+<footer>
+    © 2026 SleepWell
+</footer>
+
+
+</body>
+</html>
